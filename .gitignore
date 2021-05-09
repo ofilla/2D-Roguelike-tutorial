@@ -1,0 +1,7 @@
+Library/
+Logs/
+Temp/
+.consulo/
+Packages/
+ProjectSettings/
+UserSettings/
