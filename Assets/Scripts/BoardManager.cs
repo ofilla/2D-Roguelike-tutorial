@@ -21,7 +21,7 @@ public class BoardManager : MonoBehaviour
     public int columns = 8; // playable field
     public int rows = 8; // playable field
     public Count wallCount = new Count(5,9);
-    public count foodCount = new Count(1,5);
+    public Count foodCount = new Count(1,5);
     public GameObject exit;
     public GameObject[] floorTiles;
     public GameObject[] wallTiles;
@@ -61,7 +61,7 @@ public class BoardManager : MonoBehaviour
                     toInstantiate = pickRandom(floorTiles);
                 }
 
-                GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
+                GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity);
                 instance.transform.SetParent(boardHolder);
             }
         }
@@ -74,7 +74,7 @@ public class BoardManager : MonoBehaviour
 
     private GameObject pickRandom(GameObject[] list)
     {
-        idx = Random.Range(0, list.Length);
+        int idx = Random.Range(0, list.Length);
         return list[idx];
     }
 
