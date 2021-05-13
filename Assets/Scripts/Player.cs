@@ -10,6 +10,13 @@ public class Player : MovingObject
     private Animator animator;
     private int food;
 
+    public void LoseFood (int loss)
+    {
+        animator.SetTrigger("playerHit");
+        food -= loss;
+        CheckIfGameOver();
+    }
+
     protected override void Start()
     {
         animator = GetComponent<Animator>();
@@ -88,12 +95,5 @@ public class Player : MovingObject
     {
         Application.LoadLevel(Application.loadedLevel);
         // SceneManager.LoadScene("SampleScene"); // TODO: use this instead of Application.LoadLevel
-    }
-
-    private void LoseFood (int loss)
-    {
-        animator.SetTrigger("playerHit");
-        food -= loss;
-        CheckIfGameOver();
     }
 }
